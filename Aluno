@@ -1,0 +1,14 @@
+/*Questão 7*/
+show Databases;
+
+use employees;
+
+show tables;
+
+Describe employees;
+
+select last_name, count(emp_no) as num_emp from employees group by last_name order by num_emp desc limit 10;
+
+describe salaries;
+
+select salary from salaries order by emp_no limit 10;
