@@ -1,0 +1,41 @@
+drop user 'Silas'@'localhost';
+drop user 'Francisco'@'localhost';
+drop user 'Fabio'@'localhost';
+
+Create user 'Silas'@'localhost' identified by '123456'; /* Criando usuario Silas da alternativa A <seu_nome> */
+Create user 'Francisco'@'localhost' identified by '3344'; /* Criando usuario Francisco da alternativa B <nome_de_um_colega>*/
+Create user 'Fabio'@'localhost' identified by '1122'; /*Criando usuario Fabio da alternativa C <nome_de_um_professor> */
+
+grant all on employees.salaries to 'Silas'@'localhost'; /* dando previlegios da tabela salaries ao usuario silas */
+grant all on employees.salaries to 'Fabio'@'localhost'; /* dando previlegios da tabela salaries ao usuario Fabio */
+grant all on employees.salaries to 'Francisco'@'localhost'; /*dando previlegios da tabela salaries ao usuario Francisco */
+grant all on employees.employees to 'Silas'@'localhost'; /* dando previlegios da tabela employees ao usuario silas*/
+grant all on employees.employees to 'Francisco'@'localhost'; /*dando previlegios da tabela employees ao usuario Francisco */
+grant all on employees.employees to 'Fabio'@'localhost'; /*dando previlegios da tabela employees ao usuario Fabio */
+grant all on employees.departments to 'Silas'@'localhost'; /* dando previlegios da tabela departments ao usuario silas*/
+grant all on employees.departments to 'Francisco'@'localhost'; /*dando previlegios da tabela departments ao usuario Francisco */
+grant all on employees.departments to 'Fabio'@'localhost'; /*dando previlegios da tabela departments ao usuario Fabio */
+grant all on employees.dept_emp to 'Silas'@'localhost'; /* dando previlegios da tabela dept_emp ao usuario silas*/
+grant all on employees.dept_emp to 'Francisco'@'localhost'; /*dando previlegios da tabela dept_emp ao usuario Francisco */
+grant all on employees.dept_emp to 'Fabio'@'localhost'; /*dando previlegios da tabela dept_emp ao usuario Fabio */
+grant all on employees.dept_manager to 'Silas'@'localhost'; /* dando previlegios da tabela dept_manager ao usuario silas*/
+grant all on employees.dept_manager to 'Francisco'@'localhost'; /*dando previlegios da tabela dept_manager ao usuario Francisco */
+grant all on employees.dept_manager to 'Fabio'@'localhost'; /*dando previlegios da tabela dept_manager ao usuario Fabio */
+grant all on employees.titles to 'Silas'@'localhost'; /* dando previlegios da tabela titles ao usuario silas*/
+grant all on employees.titles to 'Francisco'@'localhost'; /*dando previlegios da tabela titles ao usuario Francisco */
+grant all on employees.titles to 'Fabio'@'localhost'; /*dando previlegios da tabela titles ao usuario Fabio */
+grant all on employees.View to 'Silas'@'localhost'; /* dando previlegios da tabela View ao usuario silas*/
+grant all on employees.View to 'Francisco'@'localhost'; /*dando previlegios da tabela View ao usuario Francisco */
+grant all on employees.View to 'Fabio'@'localhost'; /*dando previlegios da tabela View ao usuario Fabio */
+
+revoke all on employees.salaries from 'Fabio'@'localhost'; /*retirando todos os previlegios da tabela salaries do usuario fabio */
+revoke select on employees.salaries from 'Francisco'@'localhost'; /*retirando previlegios select da tabela salaries do usuario francisco  */
+
+show grants for Francisco@localhost; /* visao dos previlegios */
+show grants for Silas@localhost; /* visao dos previlegios */
+show grants for Fabio@localhost; /* visao dos previlegios */
+
+revoke all on employees.salaries from 'Francisco'@'localhost';/*retirando todos os previlegios da tabela salaries do usuario Silas */
+revoke all on employees.salaries from 'Silas'@'localhost';/*retirando todos os previlegios da tabela salaries do usuario Francisco */
+grant select on employees.salaries to 'Francisco'@'localhost';/*dando previlegios do select da tabela salaries ao usuario Francisco*/
+grant select on employees.salaries to 'Silas'@'localhost';/*dando previlegios do select da tabela View ao usuario Silas */
